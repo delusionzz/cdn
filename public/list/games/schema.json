@@ -1,0 +1,11 @@
+{
+    "title": "String",
+    "description": "String (could be long)",
+    "tags": "String Array (not implemented yet)",
+    "route": "string (should be ignored)",
+    "source": "string - route to the html file (iframe this)",
+    "gameType": "html | flash | emulator | proxy",
+    "width": "string - how wide the iframe should be",
+    "height": "string - how high the iframe should be",
+    "listed": "boolean"
+}
