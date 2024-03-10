@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Gunspin - PhantomGames</title>
+        <meta name="description" content="Gun Spin Phantom Games">
+        <link rel="shortcut icon" href="style/favicon.ico">
+        <link rel="stylesheet" href="style/style.css">
+        <script src="UnityLoader.js"></script>
+        <script src="UnityProgress.js"></script>
+        <script>
+            var gameInstance = UnityLoader.instantiate("gameContainer", "build.json", {
+                onProgress: UnityProgress,
+                Module: {
+                    onRuntimeInitialized: function() {
+                        UnityProgress(gameInstance, "complete")
+                    }
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="webgl-content">
+            <div id="gameContainer"></div>
+        </div>
+    </body>
+</html>
+
+<style>
+  #gameContainer {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100vw; 
+    height: 100vh; 
+    margin: 0; 
+    padding:0;
+  }
+</style>
+
+<script>
+  window.onbeforeunload = function(event) {
+            event.returnValue = 'If you reload, GunSpin will reset. Do you want to do this?';
+  };
+
+  window.addEventListener('keydown', function(event) {
+    if (event.keyCode === 32) {
+        event.preventDefault();
+        
+        const gameContainer = document.getElementById("gameContainer");
+        
+        if (gameContainer) {
+            gameContainer.click();
+        }
+    }
+});
+</script>
